@@ -1,0 +1,4 @@
+		Dump8xx Log
+
+20/6/03  Removed the Comport label from the main form. Replaced with Device.
+         Recompiled as 6.01
