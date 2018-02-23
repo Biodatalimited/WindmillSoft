@@ -1,0 +1,10 @@
+	Changes to ComDebug Help
+
+	Terminal Screen Prompt Grid and Acknowledgement Grid - To enter keyboard characters into the char column simply type the chars. The program moves to the next cell after each character. To enter those non printing chars which cannot be found on the keyboard you can either enter them as decimal byte values in the range 0-255 or as Hex chars 00-FF. To enter them in decimal format,click into the desired cell of the char column, select NumLock, and then use the Numeric Keypad keys to enter the value followed by Return. To enter them in Hex format click into the desired cell of the Hex column, enter the hex value followed by Return.
+
+	Terminal Screen NonPrint Menu no longer has a option to enter 0-255 value replaced by above system.
+
+	Terminal screen Parse option on menu bar replaced by parse button. Display of parsed values moved to Parse screen.
+
+	Restart button on Parse screen has been removed. Changes to the parse results are made as you automatically as you edit the parse. 
+	The step button works as before except when you reach the end of the parse sequence it returns to the start which was previously the action of the restart.  

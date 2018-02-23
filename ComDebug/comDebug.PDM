@@ -1,0 +1,97 @@
+[Root]
+Most Recent Package=Standard Setup Package ComDebug
+
+
+[Package|Standard Setup Package ComDebug|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Windmill 32\ComDebug\Dist
+
+[Package|Standard Setup Package ComDebug|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package ComDebug|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package ComDebug|Files Found]
+
+[Package|Standard Setup Package ComDebug|Files Released]
+
+[Package|Standard Setup Package ComDebug|Missing Dependency Information]
+
+[Package|Standard Setup Package ComDebug|Out-of-Date Dependency Information]
+
+[Package|Standard Setup Package ComDebug|Files Added]
+
+[Package|Standard Setup Package ComDebug|Files Removed]
+
+[Package|Standard Setup Package ComDebug|Files In Project]
+C:\Windmill 32\ComDebug\comDebug.exe=Yes
+C:\WINNT\system32\MSVBVM60.DLL=Yes
+C:\WINNT\system32\OLEAUT32.DLL=Yes
+C:\WINNT\system32\OLEPRO32.DLL=Yes
+C:\WINNT\system32\ASYCFILT.DLL=Yes
+C:\WINNT\system32\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Windmill 32\ComDebug\IMLComm.dll=Yes
+C:\WINNT\system32\MSFLXGRD.OCX=Yes
+C:\WINNT\system32\COMDLG32.OCX=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINNT\system32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Standard Setup Package ComDebug|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package ComDebug|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package ComDebug|Install Locations]
+C:\Windmill 32\ComDebug\comDebug.exe=$(AppPath)
+C:\WINNT\system32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windmill 32\ComDebug\IMLComm.dll=$(AppPath)
+C:\WINNT\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINNT\system32\COMDLG32.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINNT\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Standard Setup Package ComDebug|Configure Shared Files]
+Applicable=Yes
+C:\Windmill 32\ComDebug\comDebug.exe=No
+C:\Windmill 32\ComDebug\IMLComm.dll=No
+
+[Package|Standard Setup Package ComDebug|Distribution]
+Type=multi
+Size=1.44 MB
+Title=comDebug
+
+[Package|Standard Setup Package ComDebug|IconGroups]
+Group0=comDebug
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|Standard Setup Package ComDebug|comDebug]
+Icon1=comDebug.exe
+Title1=comDebug
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Standard Setup Package ComDebug|Package]
+PackageFolder=C:\Windmill 32\ComDebug\Dist
+ProjectFolder=C:\Windmill 32\ComDebug
+ServerSideCab=
+File1=C:\Windmill 32\ComDebug\Dist\setup.exe
+File2=C:\Windmill 32\ComDebug\Dist\Setup.Lst
+File3=C:\Windmill 32\ComDebug\Dist\comDeb1.CAB
+File4=C:\Windmill 32\ComDebug\Dist\comDeb2.CAB
+Handler1=PDWizard.FloppyDplySubWiz
+Handler2=PDWizard.FolderDplySubWiz
+Handler3=PDWizard.WebPostDplySubWiz

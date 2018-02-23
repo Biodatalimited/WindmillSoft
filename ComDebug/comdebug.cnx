@@ -1,0 +1,38 @@
+:Base comdebug.hlp
+:Title comDebug Help Contents
+1 Getting Started
+2 Overview=Overview
+2 Entering your instrument's communication settings=COM
+2 Establishing communications: sending messages and viewing the instrument's reply=Send
+2 Parsing the reply to extract data=Parse
+1 More About Messages
+2 Understanding messages=Messages
+2 Sending an initialisation message=Initialisation
+2 Creating a prompt string=PromptString
+2 Creating output channels=OutputsMenu
+2 Pausing the prompt string=PausePrompt
+2 Inserting a cyclic redundancy check=CRC
+1 Instrument Timings
+2 Choosing background or direct reading=InstrumentReading
+2 Setting instrument timings=Timings
+1 More About Data Channels
+2 Editing data channels=EditChannels
+2 Deleting data channels=DeleteChannel
+1 Terminal Utility to quickly test your Communications
+2 Using comDebug as a Terminal Utility=Terminal
+1 Saving Your Settings
+2 Saving the instrument file=Save
+2 Creating a device and describing your instruments=Device
+1 Reference
+2 Opening Screen: Start Up Menu=StartUpMenu
+2 Main Menu=MainMenu
+2 Terminal Screen=TerminalScreen
+2 COM Port Status Window=ComPortStatus
+2 Reply Parser Window=ParseMenu
+2 Channel Details Window=ChannelDetails
+2 Understanding RS232=RS232
+2 Modbus Settings=Modbus
+2 Trouble Shooting=TroubleShooting
+2 Error Messages=Error
+2 Decimal and Hexadecimal=Decimal
+2 Glossary=Glossary

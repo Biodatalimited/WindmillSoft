@@ -1,0 +1,26 @@
+	ComDebug Software Log
+
+23/5/03 Added Initialisation Message button.
+        Noticed that the cancel capability of the Mainform means that we have a problem
+        when channels are allocated to messages which we later cancel.
+
+6/8/03  Recompiled as version 6.00. Still need trying properly.
+
+
+6/8/03  Discovered that in the GetIMLIni call I had forgotten to send the size
+        of the data string ByVal. Curiously this worked on NT but not on 98. This
+        was simply luck with the apparent address value sent. Made the changed copied
+        to release. Gave version to Ben.
+
+23/9/03 The com setting flow control combo was being wrongly initialised crossing over
+	Xon/Xoff and hardware. It works ok until you reopen the form so if you just set
+        it once then no problem.
+	Corrected and recompiled as 6.01. Not yet copied to release.
+
+18/11/03 Corrected fault which caused run time error if the user in channel details 
+	 clicked on channel delete without selecting a channel first.
+	Recompiled as 6.02. Not yet copied to release.
+
+8/6/04	It is possible to create and allocate variables in parse and then not save the message
+	This leaves the variables allocated to the message but not in the message. Can't then
+	delete them. Need to examine this when we quit parse.

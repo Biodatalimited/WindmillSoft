@@ -1,0 +1,93 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fcharset0 Arial;}{\f1\froman\fcharset0 Times New Roman;}{\f2\froman\fprq2\fcharset0 Times New Roman;}}
+{\colortbl ;\red0\green0\blue0;}
+{\*\generator Msftedit 5.41.15.1515;}\viewkind4\uc1\pard\f0\fs20\tab\tab\tab Windmill Debug Screen\par
+\par
+\tab This screen displays debug messages from ComIML.  To use the screen first start a Windmill application eg WmDDE or Logger. This will automatically start the ComIML handler and it will start sending out debug messages. Then start ComDebug and click on Windmill Debug Screen.\par
+Messages will now be displayed. You can click on Pause to stop the scrolling in order to examine the messages in detail.\par
+\par
+Each Line starts with a number. This is a count of Milliseconds from the start of the Serial Message. It enables you see the time delays in getting a response from the instrument. A range of messages are supplied :-\par
+\par
+0   Start of Message Name :- This is sent when ComIML starts to implement a message.\par
+\par
+Send String :-   Sent when ComIML transmits a string ( Prompt or Acknowledge ) . Non print characters are shown as  <123 >.\par
+\par
+Start of Parse Attempt :-  ComIML is starting its attempt to parse the reply message. Timeout measurement starts from here\par
+\par
+Channel + Num + Value :-  The value extracted by the parse.\par
+\par
+Parse OK:- The full parse string has been implemented on the Reply Message.\par
+\par
+Parse Timeout:- The Timeout value has been exceeded before a Reply satisfying the Parse has been received.\par
+\par
+Reply:- The Reply string that was available when the parse terminated.\par
+\par
+Channel + Num + Read :- Windmill caused a full reading of this channel.\par
+\par
+Channel + Num + Persist:- Windmill read this channel as its stored value since persistence had not expired.\par
+\par
+Flush Serial Buffer :- Before ComIML starts a new message it reads and discards any bytes remaining in the serial buffer. These are displayed. No message is displayed if there are no discarded bytes.\par
+\par
+Start of Wait Command :- When a Wait is implemented this message is displayed. The end of Wait will occur after the Idle time. It will be indicated by the next action specified by the message.\par
+\par
+\par
+\par
+Differences between Direct and Background readings :\par
+\tab\par
+\tab When a direct reading is being made Windmill is waiting for the reply so the process continues until the reply is available or a Timeout occurs. In Background mode ComIML does not wait for replies to be received. Instead it allows other messages to be implemented ( on different COM ports ) and also services requests by Windmill. Whenever it returns to a Background reply it makes a fresh attempt to parse it. This means that you will see the early channels parsed several times before finally a complete parse is obtained. \par
+In Background mode the idle time delay is enforced between the end of one read of the module and the start of the next. This appears as a Wait message.\par
+\par
+\par
+\par
+Display Screen Status\par
+  \par
+\tab This screen shows debug messages from the Display Screen.  To use the screen click on Status and select either Standard Status or Full Status. The Status Screen will now display messages whilst the display screen is running. You can click on Pause to stop the scrolling in order to examine the messages in detail.\par
+\par
+Each message starts with a Time in hundredths of a second since logging started.\par
+\par
+Standard Status::-\par
+\tab The messages for this option show \par
+\tab\tab The Reading starting, \par
+\tab\tab The Reply received\par
+\tab\tab The outcome of the reading OK or an Error\par
+\tab\tab Any bytes flushed from the Serial Buffer before the next reading starts\par
+\par
+Full Status:-\par
+\tab This shows the above plus details of the parse. Each parse step is shown and its effect on the reply string is shown.\par
+\par
+The Display screen only handles one message at a time. A message which works in the Display screen is very likely to work in ComIML. However ComIML is a much more complex application. The exact timings of ComIML are bound to differ from those of the display screen. Because of this a message which works in the display screen is not guaranteed to work in ComIML. Use the Windmill Debug Screen to identify any problems which occur in Windmill.\par
+\par
+\par
+\par
+Amendments to Setting Instrument Timings\par
+\par
+Time Out\lang2057\b\f1\fs36\par
+\pard\sb100\sa100\b0\fs24 This defines how long Windmill should wait for a reply from the instrument before giving up. If no reply is received in this time, the driver declares a reading error. This avoids  ComIML being locked waiting for data from instrumnts that never respond or which send a reply which can never satisfy the Parse String. To avoid spurious timeouts set it to between five and ten times the normal response time. If you don\rquote t know the response time 5000 milliseconds should be a reasonable start point. A value for this is always required.\par
+\pard\lang1033\f0\fs20\par
+\par
+Instrument Idle Time\par
+\tab Some instruments do not like being read at too high a rate. In Background mode this sets the time delay between the end of one reading and the start of another. The actual reading rate will then be determined by the Idle time plus the time to send a prompt and to get a reply. In Direct mode the Insrument Idle Time specifies the length of delay created by a Wait command.\par
+\par
+\pard\sb100\sa100\lang2057\f1\fs24 Data Persistence Time\par
+Once data has been read from an instrument it is stored in COMIML and returned as a valid reading until the persistence time has expired. In Direct Mode this is important where messages extract several channels of data. If you set the persistence time to 0, every channel reading will cause a complete message to be executed. With a longer persistence time the message need only be executed once and all channels can be obtained from the stored data. However if you set the persistence time to longer than the reading rate that you are using in applications such as Logger then some of your readings will be copies of earlier data. Generally in direct Mode a short Persistance Time is adequate. When reading in Background  Mode the persistence time should be longer than the actual background reading rate which is controlled by the  instrument idle time ( see above ).  Note that in Background Mode the data can update before the Persistence Time expires so you will always get the latest available data. In general a long Persistence Tme is suitable in Background Mode. \par
+  \par
+\par
+\par
+Instrument Types\par
+\tab Instruments fall into one of several general categories which determine the way in which the Timings should be set.\par
+Instruments with a quick response to a Request for Data\par
+\tab These are the simplest types. They should be read directly. The Timeout should be set to longer than the delay between sending a request and obtaining a reply. If several channels are extracted from one reply then the Data Persistence Time should be set to sufficient time to avoid an unnecessary reread of the instrument. It should be less than the rate at which you wish to read data from the instrument or you will simply reread old stored data. The Instrument Idle Time then is only needed if there are Waits in the Prompt String.\par
+Instruments with a slow response to a Request for Data\par
+\tab If these are handled in Direct Mode then Windmill will run slowly as it waits for data. These are best handled in Background Mode.   The Timeout should be set to longer than the delay between sending a request and obtaining a reply. The Instrument Idle Time \cf1\lang1033\f2 sets the time delay between the end of one reading and the start of another. The actual reading rate will then be determined by the Idle time plus the time to send a prompt and to get a reply. The Data Persistence Time should be set to longer than the actual reading rate so that a valid reading is always available. In Background mode readings are updated at a rate which is not dependent on Persistence Time unlike in Direct Mode.\par
+Continuous Flow Instruments\par
+\tab These instruments give out a continuous data stream without any request being required. They must be handled in the Background. The Instrument Timeout should be set to longer than the rate at which the instrument sends messages as should be the Data Persistence Time. The Idle Time is not used.\par
+Instruments which Send a reading only when they have new data\par
+\tab Some instruments send data only when an event occurs or data changes. These are continuous flow types but the time between data messages is unknown. These must be read in the Background. In the Parse a Record Number should be extracted as the final instruction of the parse. This is a value which increments whenever a new message is received. It can always be rapidly read by Windmill programs since its value is always instantly available. If it is used as the first channel of a scan in the Logger application then Logger can be set to only record data when the record number changes. Timeout and Persistence Time can be set to large values. Logger itself should ask for data at a rate faster than the maximum expected message rate. It will only record data when the record number changes.\par
+\par
+\par
+\cf0\lang2057\f1\par
+\par
+\pard\lang1033\f0\fs20\par
+\par
+\par
+}
+ 
