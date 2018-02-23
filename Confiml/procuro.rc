@@ -1,0 +1,364 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "confiml.h"
+#include "confdlg.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+CONFIML                 ICON    DISCARDABLE     "config.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Data
+//
+
+DLGINCLUDE RCDATA DISCARDABLE 
+BEGIN
+    "CONFDLG.H\0"
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+CONFIG_SETTINGS DIALOG DISCARDABLE  4, 11, 322, 188
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Device Settings - Device name"
+FONT 8, "Helv"
+BEGIN
+    CTEXT           "",IDD_DEVICE,4,4,276,8,NOT WS_GROUP
+    DEFPUSHBUTTON   "OK",IDOK,28,164,44,14
+    PUSHBUTTON      "Cancel",IDCANCEL,88,164,44,14
+    PUSHBUTTON      "&Default",IDD_DEFAULT,152,164,44,14
+    PUSHBUTTON      "&Help",IDD_HELP,212,164,44,14
+    EDITTEXT        IDD_EDIT_0,232,16,42,12
+    COMBOBOX        IDD_COMBO_0,222,16,69,50,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDD_EDIT_1,232,30,42,12
+    COMBOBOX        IDD_COMBO_1,222,30,69,50,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDD_EDIT_2,232,44,42,12
+    COMBOBOX        IDD_COMBO_2,222,44,69,50,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDD_EDIT_3,232,58,42,12
+    COMBOBOX        IDD_COMBO_3,222,58,69,50,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDD_EDIT_4,232,72,42,12
+    COMBOBOX        IDD_COMBO_4,222,72,69,50,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDD_EDIT_5,232,86,42,12
+    COMBOBOX        IDD_COMBO_5,222,86,69,50,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDD_EDIT_6,232,100,42,12
+    COMBOBOX        IDD_COMBO_6,222,100,69,50,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDD_EDIT_7,232,114,42,12
+    COMBOBOX        IDD_COMBO_7,222,114,69,50,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDD_EDIT_8,232,128,42,12
+    COMBOBOX        IDD_COMBO_8,222,128,69,50,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDD_EDIT_9,232,142,42,12
+    COMBOBOX        IDD_COMBO_9,222,142,69,50,CBS_DROPDOWNLIST | 
+                    CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "0",IDD_QUESTION_0,4,18,212,8,NOT WS_GROUP
+    RTEXT           "1",IDD_QUESTION_1,4,32,212,8,NOT WS_GROUP
+    RTEXT           "2",IDD_QUESTION_2,4,46,212,8,NOT WS_GROUP
+    RTEXT           "3",IDD_QUESTION_3,4,60,212,8,NOT WS_GROUP
+    RTEXT           "4",IDD_QUESTION_4,4,74,212,8,NOT WS_GROUP
+    RTEXT           "5",IDD_QUESTION_5,4,88,212,8,NOT WS_GROUP
+    RTEXT           "6",IDD_QUESTION_6,4,102,212,8,NOT WS_GROUP
+    RTEXT           "7",IDD_QUESTION_7,4,116,212,8,NOT WS_GROUP
+    RTEXT           "8",IDD_QUESTION_8,4,130,212,8,NOT WS_GROUP
+    RTEXT           "9",IDD_QUESTION_9,4,144,212,8,NOT WS_GROUP
+END
+
+ADD_DEVICE DIALOG DISCARDABLE  37, 23, 283, 65
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Add IML Hardware"
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "Available Hardware",ID_COMMS,5,1,88,10,NOT WS_GROUP
+    LISTBOX         IDD_HARDWARE_LIST,5,12,225,49,LBS_HASSTRINGS | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Add",IDOK,237,21,40,14
+    PUSHBUTTON      "Cancel",IDCANCEL,237,42,40,14
+END
+
+CONFIG_DEVICES DIALOG DISCARDABLE  17, 37, 288, 178
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Configure IML Hardware"
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "Hardware &Device",202,7,2,67,9,NOT WS_GROUP
+    LISTBOX         IDD_DEVICE,5,13,225,76,LBS_HASSTRINGS | WS_VSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "&Save",IDOK,239,6,40,14
+    PUSHBUTTON      "Cancel",IDCANCEL,239,24,40,14
+    PUSHBUTTON      "S&ettings",IDD_SET,239,42,40,14
+    PUSHBUTTON      "&Comms",ID_COMMS,239,60,40,14
+    PUSHBUTTON      "&Add",IDD_ADD,239,78,40,14
+    PUSHBUTTON      "&Remove",IDD_REMOVE,239,96,40,14
+    PUSHBUTTON      "&Help",IDD_HELP,239,150,40,14
+    LTEXT           "",IDD_DESCRIPTION,11,103,217,9,NOT WS_GROUP
+    GROUPBOX        "Description",108,5,90,225,37
+    LTEXT           "",IDD_DEVICE_STRING,11,114,214,9,NOT WS_GROUP
+    CONTROL         "",115,"Static",SS_BLACKFRAME,5,134,225,30
+    CTEXT           "",IDD_INFO,11,141,218,8,NOT WS_GROUP
+    CTEXT           "© Copyright Windmill Software Ltd. 2003",118,11,149,215,
+                    9,NOT WS_GROUP
+    PUSHBUTTON      "S&oftware",IDD_SOFTWARE,239,114,40,14
+    PUSHBUTTON      "&Directory",IDD_DIRECTORY,239,132,40,14
+END
+
+LOADING DIALOG DISCARDABLE  91, 44, 125, 42
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "ConfIML"
+FONT 8, "Helv"
+BEGIN
+    CTEXT           "Loading.....",100,2,14,120,11,NOT WS_GROUP
+END
+
+SOFTWARE DIALOG DISCARDABLE  0, 0, 225, 156
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Windmill Software Authorization"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,177,114,35,15
+    LISTBOX         IDD_SOFTWARE_LIST,7,26,101,123,LBS_USETABSTOPS | 
+                    LBS_NOINTEGRALHEIGHT | LBS_NOSEL | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Software                    Authorized",IDC_STATIC,7,14,
+                    118,11
+    LTEXT           "Request Key",IDC_STATIC,125,38,44,8
+    PUSHBUTTON      "&Help",IDDHELP,123,114,35,15
+    LTEXT           "0000000",IDC_REQUEST_KEY,180,38,33,8
+    PUSHBUTTON      "Release Key",IDC_ENTER_RELEASE,145,80,50,14
+    LTEXT           "Release Key",IDC_STATIC,125,55,40,8
+    LTEXT           "0000000",IDC_RELEASE_KEY,180,55,35,8
+END
+
+RELEASE DIALOG DISCARDABLE  0, 0, 186, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Release Key Entry"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,100,50,50,14
+    EDITTEXT        IDC_RELEASE_BOX,35,50,40,15,ES_AUTOHSCROLL
+    LTEXT           "Enter 7 Character Release Key \r Supplied by Windmill Software",
+                    IDC_STATIC,35,10,105,20
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""confiml.h""\r\n"
+    "#include ""confdlg.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "CONFIG_SETTINGS", DIALOG
+    BEGIN
+        RIGHTMARGIN, 312
+        BOTTOMMARGIN, 187
+    END
+
+    "CONFIG_DEVICES", DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 287
+        BOTTOMMARGIN, 164
+        HORZGUIDE, 96
+    END
+
+    "SOFTWARE", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 218
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    "RELEASE", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", " Windmill Software Ltd\0"
+            VALUE "FileDescription", "config\0"
+            VALUE "FileVersion", "6.00\0"
+            VALUE "InternalName", "confiml\0"
+            VALUE "LegalCopyright", "Copyright © 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "conf.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "eScio\0"
+            VALUE "ProductVersion", "6.00\0"
+            VALUE "SpecialBuild", "\0"
+        END
+        BLOCK "080904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Biodata Ltd\0"
+            VALUE "FileDescription", "confiml\0"
+            VALUE "FileVersion", "6.00\0"
+            VALUE "InternalName", "confiml\0"
+            VALUE "LegalCopyright", "Copyright © 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "confiml.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Biodata Ltd confiml\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200, 0x809, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    FAIL_INITIALISE         "Failed to initialise internal data"
+    FAIL_READ_HARDWARE      "Failed to read supported hardware details"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    FAIL_READ_IML           "Failed to read IML device details from IML.INI"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    FAIL_WRITE_IML          "Failed to write IML.INI"
+    IDS_REMOVE              "Remove device '%s' from the list"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_EXIT                "IML Configuration has changed\nSave changes"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESTART_WINDOWS     "If you have been running any IML applications you must now close all the IML Devices"
+    NO_MEMORY               "Insufficient memory"
+    FAIL_INSTALL_SOFTWARE   "Failed to Install Software. See Software Dialog for details."
+    FAIL_READ_REGISTRY      "Failed to read Data from the Registry"
+    IDS_VERSION             "Config  7.00"
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

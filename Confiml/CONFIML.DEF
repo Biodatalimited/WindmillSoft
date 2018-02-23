@@ -1,0 +1,11 @@
+NAME
+DESCRIPTION	'IML Configuration Program'
+EXETYPE		WINDOWS 3.0
+STUB            'WINSTUB.EXE'
+CODE            PRELOAD MOVEABLE
+DATA            PRELOAD MOVEABLE MULTIPLE
+HEAPSIZE        32768
+STACKSIZE       8192
+EXPORTS 	SelectDeviceDlgFn
+		SettingsDlgFn
+		AddDeviceDlgFn

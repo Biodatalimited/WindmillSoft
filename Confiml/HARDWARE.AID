@@ -1,0 +1,7 @@
+[Hardware]
+HW0=AID232, LabIML RS232 ASCII Instrument driver - User defined
+
+[AID232]
+Type=X_WINAPP
+Exename=imaid232
+Unit=MODULE

@@ -1,0 +1,50 @@
+		History
+
+5/4/04		Added message box to prompt user if he exits before defining
+	a default directory. Copied file to release files.
+	This worked in debug but not in release. Needed to clear the string
+	before asking for the default dir otherwise the lack of a dir is not
+	guaranteed to be detected.
+	Added *.dir filter to Default dir to stop display of other files.
+	Hopefully the .dir extension is rare.
+
+16/4/04
+	Small changes made for Procuro.
+    To compile for them :
+	Rename Confiml.rc   Confimlwind.rc
+	Rename Procuro.rc   Confiml.rc
+	Delete Confiml.aps
+	Force recompile of Confiml.rc by right click
+	Procuro version compiled and copied to release
+	Windmill version also compiled and copied
+
+12/5/03 
+	Noticed that it is possible to exit without specifying a default
+	dir. This is via the save option.
+
+17/5/03
+	Corrected the above. Copied to release.
+
+19/5/03 
+    Recompiled Procuro
+
+4/9/03  Changed the instruction to restart windows to close the IML Devices
+	Copied to release
+
+20/11/03  Changed the maximum number of entries on a settings list to 20 to allow
+		lots of com ports. Version changed to 6.01. Need to copy and produce
+		procuro version.
+
+31/3/10  Version 6,02
+			Changed security display to cope with dates more than 127 months on from JAN 99
+
+21/12/10 Version 6.03
+			Changed Help to HTML version for main help. Still needed for devices
+
+2/2/11	Version 7.00    Version change for release
+
+18/3/11 Version 7.01    ComIML settings button activated to produce a message box telling
+	the user to Edit the device in ComDebug
+
+3/10/11 Version 7.02  Disabled Comms Button in Initial Dialog when no devices selected.
+						Gave out of memory error else.

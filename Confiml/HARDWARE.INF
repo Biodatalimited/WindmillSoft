@@ -1,0 +1,19 @@
+
+[Hardware]
+HW0=3301, Serial communications Intelligent Microlink
+HW1=3302, GPIB communications Intelligent Microlink
+
+[3301]
+Type=3301
+Desc=3301 Serial Intelligent Microlink
+Qu0=Which serial port is the Intelligent Microlink connected to?
+Qu0.field=address
+Qu0.default=1
+
+[3302]
+Type=3302
+Desc=3302 GPIB Intelligent Microlink
+Qu0=GPIB Primary address of the Microlink?
+Qu0.field=address
+Qu0.default=2
+

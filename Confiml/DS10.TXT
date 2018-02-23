@@ -1,0 +1,145 @@
+
+Project:		Intelligent Microlink Applications
+
+Document:		IML Configuration Program Design Spec.
+
+Reference:	IMLAPPS-CONF-DS 1.0
+
+Author:		Nigel Roberts
+
+Date:		25 June, 1991
+
+Circulation:	File1, File2
+
+
+
+
+Version		Date			Changes. 
+                                                                                              _
+
+DS 1.0		21, June,1991		Inception.
+
+
+
+Data Structs.
+
+
+#define MAX_QUESTION_LENGTH			80
+#define MAX_DESC_LENGTH				80
+#define MAX_NAME_LENGTH				80
+#define MAX_FIELD_LENGTH				30
+#define MAX_DEFAULT_LENGTH			30
+#define MAX_DEVICES				36
+#define MAX_PATH_LENGTH				80
+
+#define QUESTION_OPTION				1
+#define QUESTION_ANSWER				2
+
+
+#define DEVICE_MICROLINK				1
+#define DEVICE_WINAPP				2
+
+
+
+struct QuestionTag {
+	short		nType;
+	short		nOptions;
+	char 		szQn [ MAX_QUESTION_LENGTH ];
+	char		szAns [ MAX_QUESTION_LENGTH ];
+	char		szField [ MAX_FIELD_LENGTH ];
+	char		szDefault [ MAX_DEFAULT_LENGTH ];
+} QUEST, * PQUEST;
+
+
+struct HandlerTag {
+	char 		szDesc [ MAX_DESC_LENGTH ];
+	short		nQns;
+	HANDLE		haqnQn;
+} HANDLER, * PHANDLER;
+
+
+struct ModuleTag {
+	char		szModName [ MAX_NAME_LENGTH ];
+	short		nHandlers;
+	HANDLE		hahanHandler;
+} MODULE, * PMODULE;
+
+
+
+struct DeviceTag {
+	short		nDeviceType;
+	char		szDevName [ MAX_NAME_LENGTH ];
+	char		szInstallDir [ MAX_PATH_LENGTH ];
+	char		szExeName [ MAX_EXENAME ];
+	short		nModules;
+	HANDLE		hamodModule;		/** used if type is Winapp **/
+	HANDLE		haqnQn;			/** used if type is Microlink **/
+
+} DEVICE, * PDEVICE;
+
+
+DEVICE		adevDevice [ MAX_DEVICES ];
+
+
+struct GeneralTag {
+	HANDLE		hadevSetup;
+	HANDLE		hadevIML;
+	PDEVICE		pdevCurrentDevice;
+	PMODULE		pamodCurrentMod;
+	PHANDLER		pahanCurrentHandler;
+	short		nIMLDevices;
+	short		nSetupDevices;
+	short		nCurrentDevice;
+	short		nCurrentModule;
+	short		nCurrentHandler;
+	char		szSetupPath [ MAX_PATH_LENGTH ];
+	short		bChangedConfig;
+
+} GENERAL_INFO;
+
+
+
+
+
+Functions.
+
+
+HANDLE		ReadSetupDevices ( void );
+
+Reads the setup file specified in the szSetupPath in the general info struct and returns a handle to the array of device structs found. Sets the number of devices in the general struct.
+
+
+HANDLE		ReadIMLDevices ( void );
+Creates an array of device structs corresponding to the IML.INI file and returns a handle to the array. Sets appropriate fields in the general struct.
+
+short		WriteIMLINI ( void );
+writes the settings to the IML.INI file and returns a completion code.
+
+
+
+char * 		DeTokenise ( char * szWithTokens, char * szTokensReplaced );
+Returns a pointer to the detokenised string szTokensReplaced. All tokens in szWithTokens are replaced with the appropriate strings. Relies on the current module and device settings etc in the general structure.
+
+
+
+Source Files.
+
+cfmain.c
+cfdevdlg.c
+cfsetdlg.c
+cfiniinf.c
+cfutil.c
+
+cfdlg.h
+confiml.h
+
+confiml.dlg
+confiml.rc
+confiml.ico
+
+
+
+How it all works.
+
+The realy useful stuff.
+
