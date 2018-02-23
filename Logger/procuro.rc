@@ -1,0 +1,570 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "lg_def.h"
+#include "\Windmill 32\ATKit\atkit.h"
+#include "\Windmill 32\Compile Libs\imslib.h"
+#include "\Windmill 32\Compile Libs\imlinter.h"
+#include "lg_dlgs.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Data
+//
+
+DLGINCLUDE RCDATA DISCARDABLE 
+BEGIN
+    "LG_DLGS.H\0"
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ATK_CONNECTIONS DIALOG DISCARDABLE  59, 44, 296, 160
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Channel Connections"
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "&Unconnected Channels",IDC_TEXT1,11,28,96,8
+    LISTBOX         IDC_UNCONNECTED_LIST,11,38,89,81,LBS_SORT | 
+                    LBS_MULTIPLESEL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Connect -->",IDC_CONNECT,108,48,80,16,WS_GROUP
+    PUSHBUTTON      "<-- &Disconnect",IDC_DISCONNECT,108,72,80,16,WS_GROUP
+    PUSHBUTTON      "Connect &All",IDC_CONNECT_ALL,108,96,80,16,WS_GROUP
+    LTEXT           "C&onnected Channels",IDC_TEXT2,195,28,88,8
+    LISTBOX         IDC_CONNECTED_LIST,193,38,91,81,LBS_MULTIPLESEL | 
+                    WS_VSCROLL | WS_TABSTOP
+    CTEXT           "Available channels in Setup : ",IDC_DLG_DESC,1,1,292,12
+    CTEXT           "Setup Comment Text",IDC_SETUP_COMMENT,0,12,292,12
+    DEFPUSHBUTTON   "OK",1,60,136,65,16,WS_GROUP
+    PUSHBUTTON      "Cancel",2,180,136,67,16,WS_GROUP
+END
+
+ATK_DDE_SERVICE_NAME DIALOG DISCARDABLE  33, 39, 273, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Dynamic Data Exchange Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "DDE Service &name :",-1,6,43,74,8
+    EDITTEXT        IDC_DDE_SERVICE_NAME,86,42,120,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "OK",IDOK,229,8,40,14
+    PUSHBUTTON      "Cancel",IDCANCEL,229,25,40,14
+    LTEXT           "Enter a new service name with which to identify this application in DDE conversations. The service name should not be one that is in use by another application.",
+                    -1,6,8,203,26
+END
+
+SETTINGS DIALOG DISCARDABLE  46, 9, 262, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Logger Settings"
+FONT 8, "Helv"
+BEGIN
+    GROUPBOX        "Interval",IDC_STATIC,5,5,196,49,WS_GROUP
+    LTEXT           "Read inputs every",IDC_STATIC,10,20,64,10,NOT WS_GROUP
+    EDITTEXT        IDD_INTERVAL,76,19,32,12
+    LTEXT           "Time stamps:",IDC_STATIC,10,35,45,10,NOT WS_GROUP
+    COMBOBOX        IDD_TIMESTAMPS,60,34,136,73,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Screen Display Options",IDC_STATIC,6,60,117,98,WS_GROUP
+    CONTROL         "Display data on &screen",IDD_SCREEN_DISPLAY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,71,97,11
+    CONTROL         "Display digital data as text",IDD_DIGITAL_AS_TEXT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,86,97,11
+    CONTROL         "Indicate empty scans",IDD_SHOW_EMPTY_SCANS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,101,97,11
+    LTEXT           "Column Width",IDC_STATIC,55,135,47,10,NOT WS_GROUP
+    COMBOBOX        IDD_COLUMN_WIDTH,13,135,35,76,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Characters",IDC_STATIC,55,146,36,9,NOT WS_GROUP
+    DEFPUSHBUTTON   "OK",IDOK,211,9,40,14,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,211,25,40,14,WS_GROUP
+    PUSHBUTTON      "&Help",IDD_HELP,211,42,40,14,WS_GROUP
+    LTEXT           "&Logger Title :",IDC_STATIC,7,166,47,11
+    EDITTEXT        IDD_TITLE,54,164,146,12,ES_AUTOHSCROLL
+    COMBOBOX        IDD_INTERVAL_UNITS,123,18,48,37,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Logging Options",IDC_STATIC,135,60,119,98
+    CONTROL         "Log on Time",IDB_LOG_ON_TIME,"Button",
+                    BS_AUTORADIOBUTTON,144,71,97,11
+    CONTROL         "Log on Alarm",IDB_LOG_ON_ALARM,"Button",
+                    BS_AUTORADIOBUTTON,144,86,97,11
+    CONTROL         "Log on Keypress",IDB_LOG_ON_KEYPRESS,"Button",
+                    BS_AUTORADIOBUTTON,144,101,97,11
+    CONTROL         "Log on First Channel Change",IDB_LOG_ON_CHANGE,"Button",
+                    BS_AUTORADIOBUTTON,144,115,103,11
+    EDITTEXT        IDC_LOG_DURATION,145,134,49,14,ES_AUTOHSCROLL
+    LTEXT           "Log Duration",IDC_STATIC,201,134,45,10
+    LTEXT           "Seconds",IDC_STATIC,205,145,35,8
+END
+
+FILEEXISTS DIALOG DISCARDABLE  14, 26, 194, 48
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Logger - File Exists"
+FONT 8, "Helv"
+BEGIN
+    CTEXT           "File XXXXXXXX.XXX already exists!",IDD_EXISTS_TEXT,4,6,
+                    178,18
+    DEFPUSHBUTTON   "&Append",IDD_APPEND,30,26,40,14
+    PUSHBUTTON      "&Overwrite",IDD_OVERWRITE,76,26,40,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,122,26,40,14
+END
+
+ABOUT DIALOG DISCARDABLE  20, 30, 204, 110
+STYLE DS_MODALFRAME | WS_POPUP | WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
+CAPTION "About eScio LiveLogger "
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "Copyright ©  Windmill Software Ltd. 2003",-1,40,70,148,
+                    8
+    PUSHBUTTON      "OK",IDOK,146,15,40,14
+    LTEXT           "eScio LiveLogger  ",-1,42,10,81,10
+    LTEXT           "Version 6.00",-1,42,21,81,9
+    LTEXT           "Release  1.00",-1,42,32,81,11
+    ICON            "ATKLOG",B_LOG,13,12,20,20
+    CONTROL         "",IDD_SCREEN_DISPLAY,"Static",SS_BLACKRECT,41,56,161,1
+    CONTROL         "",IDD_DIGITAL_AS_TEXT,"Static",SS_BLACKRECT,41,91,161,1
+END
+
+ADVANCED_FILE DIALOG DISCARDABLE  22, 25, 285, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "File Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Open a &new data file",IDC_STATIC,6,63,106,67,WS_GROUP
+    CONTROL         "Each &Hour ",IDB_EACH_HOUR,"Button",BS_AUTORADIOBUTTON,
+                    13,74,57,10
+    CONTROL         "Each &Day ",IDB_EACH_DAY,"Button",BS_AUTORADIOBUTTON,13,
+                    88,57,10
+    CONTROL         "Each &Month",IDB_EACH_MONTH,"Button",BS_AUTORADIOBUTTON,
+                    13,102,57,10
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | WS_GROUP,5,138,
+                    262,49
+    LTEXT           "Logger will add years, months, days amd hours to your filenames as _yymmddhh. If you choose not to use the full postfix, the files will overwrite. ",
+                    IDC_STATIC,9,140,252,19,NOT WS_GROUP
+    PUSHBUTTON      "OK",IDOK,236,67,40,14,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,236,91,40,14,WS_GROUP
+    PUSHBUTTON      "&Help",IDD_HELP,236,115,40,14,WS_GROUP
+    GROUPBOX        "File name Postfix",IDC_STATIC,117,63,106,67
+    CONTROL         "_hh",IDB_HH,"Button",BS_AUTORADIOBUTTON | WS_GROUP,123,
+                    73,57,10
+    CONTROL         "_ddhh",IDB_DDHH,"Button",BS_AUTORADIOBUTTON,123,88,57,
+                    10
+    CONTROL         "_mmddhh",IDB_MMDDHH,"Button",BS_AUTORADIOBUTTON,123,102,
+                    57,10
+    CONTROL         "_yymmddhh",IDB_YYMMDDHH,"Button",BS_AUTORADIOBUTTON,123,
+                    116,57,10
+    GROUPBOX        "File Options",IDC_STATIC,6,1,106,54
+    CONTROL         "Do not save to file",IDB_NOT_LOG_TO_FILE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,13,13,73,10
+    CONTROL         "Generate a single file",IDB_LOG_SINGLE,"Button",
+                    BS_AUTORADIOBUTTON,13,26,82,10
+    CONTROL         "Generate Periodic Files",IDB_LOG_PERIODIC,"Button",
+                    BS_AUTORADIOBUTTON,13,39,89,10
+    GROUPBOX        "File Formats",IDC_STATIC,117,1,159,55
+    CONTROL         "Tabs and Headings for Excel and Replay",IDB_TABS,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,123,13,145,10
+    CONTROL         "Spaces and Headings for Printing",IDB_SPACES,"Button",
+                    BS_AUTORADIOBUTTON,123,26,121,10
+    CONTROL         "Commas and Separate Header File",IDB_SEPARATE,"Button",
+                    BS_AUTORADIOBUTTON,123,39,125,10
+    LTEXT           "For example if you choose hourly files and select the _hh postfix then you will create 24 overwriting files.",
+                    IDC_STATIC,9,160,252,19
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+ATKLOG                  ICON    DISCARDABLE     "livelog.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+ATKLOG MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Load &Hardware Setup...",     IDM_LOADIMS
+        MENUITEM SEPARATOR
+        MENUITEM "&Save Logger Setup...",       IDM_SAVE_SETUP
+        MENUITEM "&Restore Logger Setup...",    IDM_RESTORE_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "&DataFile",                   IDM_DATAFILE
+        MENUITEM SEPARATOR
+        MENUITEM "DD&E...",                     IDM_DDE
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    MENUITEM "&Inputs",                     IDM_INPUTS
+    MENUITEM "S&ettings",                   IDM_SETTINGS
+    MENUITEM "File &Options",               IDM_FILEOPT
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Contents",                   IDM_HELP_CONTENTS
+        MENUITEM "&How to Use Help",            IDM_HELP_ON_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About Logger...",            IDM_ABOUT
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""lg_def.h""\r\n"
+    "#include ""\\Windmill 32\\ATKit\\atkit.h""\r\n"
+    "#include ""\\Windmill 32\\Compile Libs\\imslib.h""\r\n"
+    "#include ""\\Windmill 32\\Compile Libs\\imlinter.h""\r\n"
+    "#include ""lg_dlgs.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "ADVANCED_FILE", DIALOG
+    BEGIN
+        RIGHTMARGIN, 276
+        BOTTOMMARGIN, 193
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 6,0,0,0
+ PRODUCTVERSION 6,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Windmill Software Ltd\0"
+            VALUE "FileDescription", "eScio LiveLogger\0"
+            VALUE "FileVersion", "6.00\0"
+            VALUE "InternalName", "Logger\0"
+            VALUE "LegalCopyright", "Copyright © 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "LiveLogger.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "eScio LiveLogger\0"
+            VALUE "ProductVersion", "6.00\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x809, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ATK_ERR_USER_ABORTED    "Operation has been aborted by user"
+    ATK_ERR_NO_FILENAME     "No filename specified"
+    ATK_ERR_NO_MEMORY_IN_DLG "Insufficient memory to load Dialog"
+    ATK_ERR_TOO_MANY_CONNECTIONS "Too many Connections have been selected"
+    ATK_ERR_NO_CONNECTIONS  "At least one connection must be specified"
+    ATK_ERR_INVALID_IML_REPLY "Invalid IML reply recieved"
+    ATK_ERR_NO_LOCAL_MEMORY "Insufficient Local Memory"
+    ATK_ERR_COMMON_DIALOG   "Program or Memory Error in Common Dialog"
+    ATK_ERR_NO_SUITABLE_CHANS 
+                            "No channels exist in this setup which are suitable for connection to this application"
+    ATK_ERR_REPLY_TIMEOUT   "Timed out waiting for data to arrive"
+    ATK_ERR_NO_GLOBAL_MEMORY "Insufficient memory"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IML_CONFIG_ERROR        "Unable to find IML Device - Check configuration and restart system"
+    IML_NOT_READY           "Timed out, IML Device is busy"
+    18                      "Device not open"
+    IML_BAD_HANDLE          "Program error - Bad IML Handle"
+    IML_REPLY_PENDING       "Program error - Reply pending"
+    IML_NO_REPLY_EXPECTED   "Program error - No reply pending"
+    22                      "Timed out sending command"
+    IML_BAD_DEVICE          "Program error - Bad IML device number"
+    IML_NO_HANDLES          "Out of Memory"
+    IML_NO_DEVICES          "No suitable devices listed in IML.INI file"
+    26                      "GPIB driver failed - run TEST488.exe"
+    IML_FATAL_ERROR         "Fatal error in link to IML Device"
+    28                      "Baud rate not supported"
+    IML_LINK_ERROR          "Error in link to IML Device"
+    IML_BUFFER_TOO_SMALL    "Program error - Buffer too small"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    32                      "Old version of GPIB Driver cannot be used"
+    IML_NO_FREE_BUFFER      "No binary data buffers available"
+    IML_NO_PACKET           "No binary data ready"
+    IML_PACKET_TOO_BIG      "Too much binary data"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IMS_PARTITIONING        "The setup is being edited by SetupIML, save the setup before retrying"
+    IMS_CONFIGURING         "The setup is being edited by SetupIML, save the setup before retrying"
+    IMS_CHANNEL_IN_USE      "Another application is using the channels in this setup"
+    IMS_FILE_NOT_FOUND      "Cannot find this setup file"
+    IMS_FILE_FORMAT_ERROR   "Error in the IMS file format - corrupt file"
+    IMS_OUT_OF_MEMORY       "Insufficient memory"
+    IMS_LOAD_ERRORS         "This setup file cannot be used with your current hardware configuration. It requires different hardware."
+    IMS_ALREADY_LOADED      "IMS ALREADY LOADED"
+    IMS_SUCCESS             "IMS SUCCESS"
+    IMS_BAD_NAME            "Program error - IMS BAD NAME"
+    IMS_LOCK_UNDERFLOW      "Program error - IMS LOCK UNDERFLOW"
+    IMS_FILE_EXISTS         "This file cannot be deleted or altered"
+    IMS_CANNOT_CREATE       "Unable to create the specified file"
+    IMS_DISK_FULL           "The disk is full - delete some files and retry"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IMS_CHANNEL_ERROR       "IMS CHANNEL ERROR"
+    IMS_NOT_PARTITIONING    "Program error - IMS NOT PARTITIONING"
+    IMS_BAD_OPERATION       "Program error - IMS BAD OPERATION"
+    IMS_NOT_CONFIGURING     "Program error - IMS NOT CONFIGURING"
+    IMS_BAD_CHANNEL         "Program error - IMS BAD CHANNEL"
+    IMS_DUPLICATE_CHANNEL   "Program error - IMS DUPLICATE CHANNEL"
+    IMS_TOO_MANY_SETUPS     "Too many IML setups loaded"
+    IMS_BAD_KEY             "Program error - IMS BAD KEY"
+    IMS_SETUP_CHANGED       "The hardware setup has changed"
+    IMS_LIB_NOT_LOADED      "Cannot find IMSLIB.DLL - Reinstall System"
+    IMS_LIB_VERSION_ERROR   "Incompatible IMSLIB.DLL - Reinstall System"
+    IMS_BUFFER_TOO_SMALL    "Program error - IMS BUFFER TOO SMALL"
+    76                      "Too many alarms or controllers in use - setup failed to load"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    100                     "The demonstration version does not work with this hardware"
+    104                     "Hardware failed to accept data"
+    105                     "Hardware failed to supply data"
+    106                     "Hardware failed to configure"
+    107                     "Error in hardware communications"
+    111                     "IML internal memory corrupted"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    113                     "IML Hardware setup not suitable"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    200                     "Channel not present in the hardware"
+    202                     "Channel is grouped with preceding channel"
+    206                     "Data format not acceptable"
+    207                     "This channel cannot be enabled"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    208                     "Channel does not support Filter settings"
+    209                     "Selected filter setting is not acceptable"
+    212                     "Selected measurement type is not available"
+    213                     "This name already used for another channel"
+    214                     "Not a suitable channel name"
+    215                     "Channel name cannot begin with the ID character"
+    216                     "Channel does not allow Offset (or Poisson Ratio)"
+    217                     "Unacceptable value for Offset or Poisson ratio or Scans per Trigger"
+    218                     "Channel does not have programmable ranges or modes"
+    219                     "Selected range is not available for this type of measurement"
+    220                     "Channel does not allow a Scale factor (or Gauge factor)"
+    221                     "Unacceptable value for Scale factor or Gauge factor or Scan interval"
+    222                     "Channel does not allow Transducer to be specified"
+    223                     "Selected transducer or trigger type not available"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    224                     "Units name is not acceptable"
+    225                     "Channel does not have programmable Wait time"
+    226                     "Channel settling wait time not acceptable"
+    228                     "Primary/secondary boundary not acceptable"
+    229                     "Primary/secondary boundary must be within this frame"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    300                     "Channel not present in the hardware"
+    302                     "Channel is grouped with preceding channel"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    305                     "Channel not present in the hardware"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    330                     "Channel not present in the hardware"
+    333                     "Channel is grouped with preceeding channel"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    353                     "Channel is not enabled"
+    354                     "Channel is of wrong type"
+    356                     "Unable to achieve zero point with the current imbalance and excitation voltages"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    HOURS_MINS_SECS         "Time of day (HH:MM:SS)"
+    SECS_SINCE_START        "Seconds since start"
+    SECS_AND_HUNDRETHS      "Seconds and hundredths since start"
+    MINUTES_AND_SECS        "Minutes and seconds since start"
+    DATE_TIME               "Date and time"
+    TAB_SEPARATED           "Tabs and headings (for Excel & Replay)"
+    SPACE_SEPARATED         "Spaces and headings (for printing)"
+    COMMA_SEPARATED         "Commas, separate heading file"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    MINUTE_UNITS            "Minutes"
+    HOUR_UNITS              "Hours"
+    DAY_UNITS               "Days"
+    WEEK_UNITS              "Weeks"
+    SCANINTERVAL_UNITS_SECS "Seconds"
+    SCANINTERVAL_UNITS_MINS "Minutes"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MAINTITLE           "eScio LiveLogger"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERR_INVALID_INTERVAL    "Invalid Sample Interval"
+    ERR_NO_LOCAL_MEMORY     "Insufficient Memory.\nClose any unused applications and retry."
+    ERR_NO_GLOBAL_MEMORY    "Insufficient Memory"
+    ERR_FILE_CREATION       "Unable to Create Data File.\nCheck Validity of File Name \nand availability of disk space."
+    ERR_FILE_WRITE          "Unable to write data to file, the disk may be full.\nLogging has been Stopped."
+    ERR_INVALID_FILENAME    "Invalid File Name Specified"
+    ERR_CHAN_NOT_IN_SUMMARY "One or more channels have been changed in the hardware setup.\nThese channels will be ignored"
+    ERR_USER_ABORTED        "Logging has been cancelled"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERR_INVALID_CMDLINE_ARG "The setup file, specified on the command line, cannot be found"
+    ERR_ALL_CONNECTIONS_MISSING 
+                            "None of the existing connections are now available.\nUse the 'Inputs' menu to select new connections"
+    ERR_ALL_CHANS_IN_ERROR  "All channels are in error. Aborting data logging."
+    ERR_DEMO_VIOLATED       "The demo version does not work with this hardware"
+    ERR_UNABLE_TO_SAVE_SETUP "Unable to save setup file"
+    ERR_NON_PERIODIC_FILE_SPEC 
+                            "Log data filename should include '???' when opening multiple files"
+    ERR_RESET_VALUE_TOO_HIGH 
+                            "Maximum number of data files \nmust not exceed 999"
+    ERR_RESET_VALUE_TOO_LOW "Minimum number of data files \nmust be at least 1"
+    ERR_TOO_MANY_UNIT_INTERVALS 
+                            "Interval too long \nmaximum number of units is 1000"
+    ERR_TOO_FEW_UNIT_INTERVALS "At least one interval unit must be specified"
+    DDE_ERR_NOT_PROTECT_MODE 
+                            "This application cannot be used in Windows Real Mode"
+    DDE_ERR_INIT_FAILED     "Unable to register Logger as a DDE Server"
+    DDE_ERR_NO_GLOBAL_MEMORY "Insufficient memory for DDE operation."
+    DDE_ERR_DUPLICATE_SERVICE_NAME 
+                            "This DDE service name is already registered.\nTo use DDE, change the service name for this Logger."
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

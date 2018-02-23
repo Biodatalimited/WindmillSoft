@@ -1,0 +1,129 @@
+DLGINCLUDE RCDATA DISCARDABLE
+BEGIN
+    "LG_DLGS.H\0"
+END
+
+SETTINGS DIALOG 46, 9, 259, 146
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Windmill Logger Settings"
+FONT 8, "Helv"
+BEGIN
+    GROUPBOX        "Interval", -1, 5, 5, 196, 49, WS_GROUP
+    LTEXT           "&Read inputs every", -1, 10, 20, 64, 10, NOT WS_GROUP
+    EDITTEXT        IDD_INTERVAL, 76, 19, 32, 12
+    LTEXT           "seconds", -1, 110, 20, 51, 9, NOT WS_GROUP
+    LTEXT           "&Time stamps:", -1, 10, 35, 45, 10, NOT WS_GROUP
+    COMBOBOX        IDD_TIMESTAMPS, 60, 34, 136, 56, CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Options", -1, 5, 57, 196, 82, WS_GROUP
+    CONTROL         "Display data on &screen", IDD_SCREEN_DISPLAY, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 14, 71, 123, 12
+    CONTROL         "Display &digital data as text", IDD_DIGITAL_AS_TEXT, 
+                    "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 14, 87, 123, 11
+    CONTROL         "Indicate &empty scans", IDD_SHOW_EMPTY_SCANS, "Button", 
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 14, 99, 123, 14
+    LTEXT           "Column &Width", -1, 14, 120, 49, 10, NOT WS_GROUP
+    COMBOBOX        IDD_COLUMN_WIDTH, 65, 118, 35, 76, CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Characters", -1, 104, 120, 58, 9, NOT WS_GROUP
+    DEFPUSHBUTTON   "OK", IDOK, 211, 9, 40, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 211, 25, 40, 14, WS_GROUP
+    PUSHBUTTON      "&Help", IDD_HELP, 211, 42, 40, 14, WS_GROUP
+END
+
+FILEEXISTS DIALOG 14, 26, 194, 48
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Logger - File Exists"
+FONT 8, "Helv"
+BEGIN
+    CTEXT           "File XXXXXXXX.XXX already exists!", IDD_EXISTS_TEXT, 4, 
+                    6, 178, 18
+    DEFPUSHBUTTON   "&Append", IDD_APPEND, 30, 26, 40, 14
+    PUSHBUTTON      "&Overwrite", IDD_OVERWRITE, 76, 26, 40, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 122, 26, 40, 14
+END
+
+ABOUT DIALOG 20, 30, 204, 110
+STYLE DS_MODALFRAME | WS_POPUP | WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
+CAPTION "About Windmill Logger "
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "Copyright © 1995 Windmill Software Ltd.", -1, 42, 65, 
+                    148, 8
+    LTEXT           "Serial Number Unassigned", IDD_SERIALNUMBER, 42, 75, 
+                    148, 9
+    PUSHBUTTON      "OK", IDOK, 146, 15, 40, 14
+    LTEXT           "Windmill Logger  ", -1, 42, 10, 81, 10
+    LTEXT           "Version 4.04", -1, 42, 21, 81, 9
+    LTEXT           "Release  ALPHA", -1, 42, 32, 81, 11
+    ICON            "ATKLOG", -1, 13, 12, 18, 20
+    CONTROL         "", IDD_SCREEN_DISPLAY, "Static", SS_BLACKRECT, 41, 56, 
+                    161, 1
+    CONTROL         "", IDD_DIGITAL_AS_TEXT, "Static", SS_BLACKRECT, 41, 91, 
+                    161, 1
+END
+
+DATAFILE DIALOG 39, 28, 249, 156
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Data File Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "&Log data to file", IDD_LOG_TO_DISK, "Button", 
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP, 7, 6, 80, 12
+    CONTROL         "", IDD_FILE_INTERVAL, "Static", SS_BLACKFRAME | 
+                    WS_GROUP, 5, 23, 192, 92
+    LTEXT           "File&name", -1, 9, 26, 56, 8
+    EDITTEXT        IDD_FILENAME, 8, 36, 62, 12, ES_AUTOHSCROLL
+    LTEXT           "&Directory", IDD_FILEINTV_UNITS, 76, 25, 85, 11
+    LTEXT           "C:\\", IDD_DIRECTORY_NAME, 75, 36, 87, 9, NOT WS_GROUP
+    LISTBOX         IDD_DRIVES_DIRS, 74, 48, 88, 65, LBS_SORT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "File &Type:", -1, 5, 121, 36, 11
+    COMBOBOX        IDD_FILEFORMAT, 46, 118, 151, 58, CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "", -1, "Static", SS_BLACKFRAME | WS_GROUP, 5, 134, 192, 
+                    19
+    CONTROL         "&Periodically open new log file", IDD_PERIODIC_FILES, 
+                    "Button", BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP, 8, 
+                    138, 113, 10
+    PUSHBUTTON      "&Settings...", IDD_PERIODIC_FILE_SETTINGS, 154, 137, 40, 
+                    14, WS_GROUP
+    PUSHBUTTON      "OK", IDOK, 203, 6, 40, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 203, 23, 40, 14, WS_GROUP
+    PUSHBUTTON      "&Help", IDD_HELP, 203, 41, 40, 14, WS_GROUP
+END
+
+ADVANCED_FILE DIALOG 22, 25, 242, 157
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Advanced File Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Open a &new data file", -1, 5, 1, 182, 98, WS_GROUP
+    CONTROL         "After each &Interval of :", IDD_EACH_INTERVAL, "Button", 
+                    BS_AUTORADIOBUTTON | WS_TABSTOP, 11, 18, 82, 11
+    CONTROL         "Each H&our on the Hour", IDD_EACH_HOUR, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 31, 174, 13
+    CONTROL         "Each &Day at midnight", IDD_EACH_DAY, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 47, 174, 10
+    CONTROL         "Each &Week at midnight Sunday", IDD_EACH_WEEK, "Button", 
+                    BS_AUTORADIOBUTTON, 11, 60, 174, 13
+    EDITTEXT        IDD_FILE_INTERVAL, 94, 17, 23, 13, ES_AUTOHSCROLL | 
+                    WS_GROUP
+    COMBOBOX        IDD_FILEINTV_UNITS, 118, 17, 47, 49, CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Store only the", -1, 10, 76, 49, 10
+    EDITTEXT        IDD_FILE_RESET, 61, 75, 24, 12, ES_AUTOHSCROLL
+    LTEXT           "most recent data files.", -1, 87, 77, 83, 10, NOT 
+                    WS_GROUP
+    LTEXT           "(Overwriting the older files with new data)", -1, 10, 
+                    88, 176, 10, NOT WS_GROUP
+    CONTROL         "", -1, "Static", SS_BLACKFRAME | WS_GROUP, 5, 100, 234, 
+                    54
+    LTEXT           "When using this facility, filenames should contain three '?' characters to indicate where in the filename the file number should be inserted. For example :", 
+                    -1, 12, 103, 219, 27, NOT WS_GROUP
+    CTEXT           "DAY???.wl", -1, 10, 130, 221, 10, NOT WS_GROUP
+    CTEXT           "TEST.???", -1, 10, 140, 221, 9, NOT WS_GROUP
+    PUSHBUTTON      "OK", IDOK, 192, 4, 40, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 192, 21, 40, 14, WS_GROUP
+    PUSHBUTTON      "&Help", IDD_HELP, 192, 38, 40, 14, WS_GROUP
+END

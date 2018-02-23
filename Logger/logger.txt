@@ -1,0 +1,61 @@
+		History
+
+4\4\03		Remove superflous atkit.rc
+		Recompiled and copied to release
+
+5\4\03  Updated Version Block to 6.00 and copied
+
+15\4\03 Changing for Procuro needs.
+		Default Title made a string in the rc file.
+		Windmill removed from several message boxes to leave Logger.
+
+16\4\03 To modify for Procuro. All changes have been confined to the
+		resource file. The file used by the project is lg.rc. A file
+		procuro.rc has been created. Rename it lg.rc and save the 
+		original as logger.rc. 
+		Delete the lg.aps file before restarting the project.
+		Right click on lg.rc and force a compile else the exe does
+		not reflect the changes.
+
+18\4\03 Further mods for Procuro. Needed icon changing. The original
+		ones had a separate 16*16 version set to a default design.
+		When an IMS file is loaded from the file menu then a default
+		Title is created consisting of the App title + - imsfile. 
+		Needed to allow for both default app titles. Compiled and 
+		copied to release.
+		Switched back to standard logger. Recompiled and copied to
+		release.
+
+19\5\03 Discovered that daylight saving time arrangements were causing
+		trouble. Arranged to convert current _time to calendar form and
+		then back again. If there is a difference we allow for that when
+		doing such a conversion.
+
+20\5\03 Improved the handling of filenames. Still need to resolve the
+		opening of periodic files so we don't get _xx_xx. Also its not
+		easy to append to a .wld file.
+
+23\5\03 Added StripPeriodicPostfix function to get rid of these when
+        the user enters a filename. Copied to release files.
+
+4\9\03  Corrected error in naming of periodic files. Months were starting at 0.
+		Copied to release.
+
+3\11\04 Changed ExtractCmdLineArg to cope with filenames in quotes
+		Released as 6.01
+
+19\11\04 Problem found when using intervals of less than 1 sec with periodic files.
+		Code to cause files to terminate on the hour produced divide by 0 error.
+		Released as 6.02
+
+18/1/05	Problem found with file format check box. It didn't work. Fixed and released as
+		6.03
+
+21/12/10  6.04  Changed to HTML Help
+		
+2/2/11	7.00 Version changed for release
+
+19/11/15  7.01  Version with File Edit Box not enabled at power up.
+		User must use the file menu initially in order to specify full path.
+		He can use the Edit Box to change the file name.
+

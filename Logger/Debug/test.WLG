@@ -1,0 +1,24 @@
+[Application0]
+Type=Logger
+Exe=D:\Windmill 32\Logger\Debug\Logger.exe
+Window= 8.25 11.00 50.00 50.00
+IMSFile=C:\Windmill\tsiggen.ims
+Title=Windmill Logger - TSIGGEN.IMS
+DDEEnabled=0
+DDEServiceName=Logger
+Interval=1000
+FileFormat=0
+TimeFormat=0
+DisplayOn=1
+LogEmptyScans=1
+DigitalAsText=1
+ColumnWidth=12
+LogToFile=1
+DataDirectory=D:\Windmill 32\Logger
+DataFile=.wl
+PeriodicFiles=0
+PeriodType=0
+IntervalUnit=0
+NumberOfUnits=30
+MaximumFiles=999
+Input1=00000

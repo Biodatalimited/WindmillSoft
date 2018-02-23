@@ -1,0 +1,50 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Logger - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x809 /fo"Release/lg.res" /d "NDEBUG" "C:\Windmill 32\Logger\lg.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1.BIO\LOCALS~1\Temp\RSP1434.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/Logger.pdb" /machine:I386 /out:"Release/Logger.exe" 
+".\Release\Atappset.obj"
+".\Release\Atdde.obj"
+".\Release\Aterror.obj"
+".\Release\Atimlcom.obj"
+".\Release\Atkini.obj"
+".\Release\Atlimits.obj"
+".\Release\Atlodset.obj"
+".\Release\Atmonit.obj"
+".\Release\Atreawri.obj"
+".\Release\Atselect.obj"
+".\Release\Atunits.obj"
+".\Release\Lg_dde.obj"
+".\Release\Lg_dlgs.obj"
+".\Release\Lg_fdlgs.obj"
+".\Release\Lg_file.obj"
+".\Release\Lg_hist.obj"
+".\Release\Lg_log.obj"
+".\Release\Lg_main.obj"
+".\Release\Lg_paint.obj"
+".\Release\Lg_setup.obj"
+".\Release\Lg_utils.obj"
+".\Release\lg.res"
+"..\Compile Libs\Commslib.lib"
+"..\Compile Libs\Imslib.lib"
+"..\..\Program Files\Microsoft Visual Studio\VC98\Lib\htmlhelp.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1.BIO\LOCALS~1\Temp\RSP1434.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Linking...
+
+
+
+<h3>Results</h3>
+Logger.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
