@@ -1,0 +1,2 @@
+5/6/04	Added code to allow com ports of 10+
+		Added code to test for data available before calling readfile

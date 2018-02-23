@@ -1,0 +1,24 @@
+DLGINCLUDE RCDATA DISCARDABLE
+BEGIN
+    "IMMLDLG.H\0"
+END
+
+ABOUTBOX DIALOG 31, 29, 191, 101
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About Microlink Driver"
+FONT 8, "Helv"
+BEGIN
+    ICON            DRIVICON, ID_ICON, 7, 10, 18, 20
+    LTEXT           "GPIB Microlink Driver (3302)", ID_DRIVER, 38, 8, 101, 
+                    11
+    LTEXT           "Version 1.03", ID_VERSION, 38, 21, 87, 11
+    LTEXT           "ALPHA TEST", ID_RELEASE, 38, 34, 86, 11
+    CONTROL         "", 110, "Static", SS_BLACKRECT, 38, 47, 141, 1
+    LTEXT           "© Copyright 1994, Windmill Software Ltd.", 108, 38, 50, 
+                    150, 11
+    LTEXT           "<SN>", IDD_SERIALNUM, 38, 63, 153, 11
+    CONTROL         "", 111, "Static", SS_BLACKRECT, 38, 75, 141, 1
+    DEFPUSHBUTTON   "OK", IDOK, 145, 8, 40, 14
+    LTEXT           "Driving IML device", 201, 38, 79, 65, 11
+    LTEXT           "<DN>", IDD_DEVICES, 104, 79, 82, 17
+END
