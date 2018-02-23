@@ -1,0 +1,7 @@
+imslib.obj imsinter.obj imsfile.obj c:\windev\lib\libentry.obj 
+imslib.dll
+nul
+sdllcew libw commslib
+imslib.def
+
+
