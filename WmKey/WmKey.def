@@ -1,0 +1,10 @@
+
+LIBRARY   WMKEY
+
+DESCRIPTION 'None'
+
+EXPORTS
+		WmSetKey @1
+		WmGetKey @2
+		WmPutKey @3
+

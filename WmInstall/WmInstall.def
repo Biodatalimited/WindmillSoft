@@ -1,0 +1,8 @@
+
+LIBRARY   WMINSTALL
+
+DESCRIPTION 'Ini editor for install shield'
+
+EXPORTS
+		WmInstall @1
+		WmDelete @2

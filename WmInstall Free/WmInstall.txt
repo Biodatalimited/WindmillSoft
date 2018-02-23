@@ -1,0 +1,28 @@
+		History
+
+5/4/03		Software list entry for apps was not working because of an
+	incorrect logical test on result of Query mark file.
+	Added Version header in Wminstall.rc
+	Changed to release version
+
+18/6/03     Problems with copying iml.ini and deleting iml.inf. Tried
+		renaming inf to ini.
+
+20/6/03 Decided to change the system to renaming any existing iml.ini
+         to .bak immediately. Iml.inf as was is now called .ini when
+	 copied onto the disk. This avoids the copying / renaming problems
+	 that could not be resolved. They seemed to be due to the OS buffering
+	 the file changes caused by WritePrivateProfileString. Only happened
+	 on 98.
+
+11/4/04  Added code the check that imml800 has an M0P3 entry since some early
+	versions did not. Add M0P3 = 0 if it does not otherwise confiml will not run.
+
+30/11/10  The free trial version required mods to this DLL
+		Corrected a problem with CopyDevices. Did it ever work?
+		Arranged that COMIML is not authorised at end of install
+		Arranged extra Registry entry in MLGPIB key to keep track of elapsed time
+		For COMIML we now have a None.imd file which is copied to the install dir.
+		This is used in initial install to allow user to start Windmill with a no
+		channels IMD device which will not generate errors.
+		This DLL must change the path of the IMD file to the install directory.
