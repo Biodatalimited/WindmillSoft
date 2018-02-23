@@ -1,0 +1,37 @@
+		History
+
+
+4/4/03		Added test for 0 length string when calling GetIMLDir.
+	Used by confiml to make sure we have a default dir specified.
+	Copied to release files.
+5/4/03       Changed version_string to 6.00. Copied to release
+
+14/10/03    Problem with serial frames which produced error 22. This was
+    caused by the message sent to ask for a reply timing out. It originally had
+	a 5 sec timeout but I had reduced it to 25 msec to improve performance under
+	error conditions. The timeout is surprising since this is simply an inter app
+	message to which the reply can be not ready. It seems the handler is just not
+	dealing with the message quickly enough. Increased the TO back to 5 sec.
+	Recompiled and copied to release. 
+
+Jan 2011 - 6.01
+	The installshield adds a final \ to the imlini path and working dir path
+	It seems that \\ does not bother file names much and things work OK.
+	Confiml writes the working directory without the slash so that resolves the issue.
+    However in the ComIML free trial problems arose since we use the working dir without
+    first using Confiml. Modified the code to remove the unwanted slashes
+
+May 2010 - 6.02
+	Restored the WaitForIdleInput 2 sec delay on loading apps. Don't know why it was 
+	commented out
+
+October 2011 - 6.03
+	Changed the start up delay to use a semaphore.
+	Previous arrangement did not work.
+	Arranged to test every half sec if all the interpreters have registered
+	Will not return to main app for 5 secs if they have not.
+
+May 2012
+	Moved the mutex stores to shared data. Not issued yet
+
+
