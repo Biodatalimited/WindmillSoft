@@ -1,0 +1,39 @@
+
+
+DLGINCLUDE RCDATA DISCARDABLE
+BEGIN
+    "ATLODSET.H\0"
+END
+
+ATLODSET DIALOG 14, 30, 307, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Load Hardware Setup"
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "File &Name:", stc3, 6, 6, 76, 10
+    EDITTEXT        edt1, 6, 16, 90, 12, ES_LOWERCASE | ES_AUTOHSCROLL | 
+                    ES_OEMCONVERT
+    LISTBOX         lst1, 12, 28, 84, 68, LBS_SORT | LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_DISABLENOSCROLL | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "&Directories:", -1, 110, 6, 92, 9
+    LTEXT           "", stc1, 110, 16, 92, 9, SS_NOPREFIX
+    LISTBOX         lst2, 110, 28, 92, 68, LBS_SORT | LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_DISABLENOSCROLL | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "List Files of &Type:", stc2, 6, 102, 90, 9
+    COMBOBOX        cmb1, 6, 112, 90, 36, CBS_DROPDOWNLIST | CBS_AUTOHSCROLL | 
+                    WS_BORDER | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Dri&ves:", stc4, 110, 102, 92, 9
+    COMBOBOX        cmb2, 110, 112, 92, 68, CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_AUTOHSCROLL | CBS_SORT | 
+                    CBS_HASSTRINGS | WS_BORDER | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 230, 15, 50, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 230, 33, 50, 14, WS_GROUP
+    PUSHBUTTON      "&Help", psh15, 230, 55, 50, 14, WS_GROUP
+    CONTROL         "&Read Only", chx1, "Button", BS_AUTOCHECKBOX | WS_GROUP | 
+                    WS_TABSTOP, 230, 77, 50, 12
+    LTEXT           "Loaded &Setups", -1, 212, 102, 74, 9
+    COMBOBOX        ID_SETUPCOMBO, 211, 112, 90, 36, CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END

@@ -1,0 +1,17 @@
+DLGINCLUDE RCDATA DISCARDABLE
+BEGIN
+    "ATDDE.H\0"
+END
+
+ATK_DDE_SERVICE_NAME DIALOG 33, 39, 273, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Dynamic Data Exchange Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "DDE Service &name :", -1, 6, 43, 74, 8
+    EDITTEXT        IDC_DDE_SERVICE_NAME, 86, 42, 120, 12, ES_AUTOHSCROLL
+    PUSHBUTTON      "OK", IDOK, 229, 8, 40, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 229, 25, 40, 14
+    LTEXT           "Enter a new service name with which to identify this application in DDE conversations. The service name should not be one that is in use by another application.", 
+                    -1, 6, 8, 203, 26
+END
