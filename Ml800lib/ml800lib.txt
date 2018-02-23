@@ -1,0 +1,90 @@
+		History
+
+5/4/03		Added Version block. Copied to release.
+
+23/4/03     Changed the ID timeout for 9600 to 640msec. To try
+            with Ethernet com port.
+
+7/5/03      Restored the timeouts to their old values. We have found
+that Ethernet based virtual com ports need the app to give up control
+in order for them to operate at a sensible speed. The ethernet is 
+presumably run by a separate thread. To fix this we create a Semaphore.
+It is always set to 0 so if you wait for it then you will timeout. This
+arrangement allows us to give up control for 5 msec at a time. This will
+slow us down slightly since the final reply character will presumably
+arrive at some time during this period. We need to include this feature
+in both send and receive loops.
+			Also changed the ReadFile call sequence. The original simply
+asked for whatever bytes the comms had received. The call returned
+immediately with 0 if none had been received. We discovered that one
+Ethernet virtual com port did not handle this but simply hung up unless
+at least one byte was received. We changed to asking how many bytes were
+available before calling ReadFile.
+
+8/5/03     Tried replacing the above semaphore arrangements with the
+more obvious call to PeekMessage to yield to other apps. This works
+but SetupIML comes up with BAD_DEVICE when it is started and loads
+the handler. It actually works OK but the error is off putting. Decided
+to leave well alone for now.
+
+7/8/03     Customer is having problems with delayed replies using Ethernet
+Clearly the response time cannot be guaranteed on a busy network.
+	To simulate this remove the semaphore. This allows us to generate 
+delayed replies. We can now experiment with strategies for dealing with
+them. 
+	Changed the error philosophy. If in response to a request a message
+is received which is correctly formatted ( from correct module + CR ) but
+this message is the response to a previous request and thus the CT= type 
+section is incorrect then try again. This deals with the situation where
+a previous message timed out but then appeared as an apparent response to
+the next request. It was possible when message were sent rapidly to lock
+into a situation where missing one message meant that all subsequent messages 
+were one out of step. This improved matters. 
+	Changed the timeouts so that we use a long one normally but in case of 
+error we change to a short one. This prevent the app from apparently hanging.
+We restore the long timeout as soon as we get a valid reply.
+
+Added an extra function to allow a different approach to detecting which
+modules are present. The idea is to send all 30 ID requests one after the
+other. These to be seperated by delete chars to allow the module time to
+reply. Since all modules are on the same serial bus there is no reason
+to suppose that any module will do other than reply instantly. Any 
+transmission delays will apply to all modules so should cause no problems,
+The replies will accumulate in the serial receive buffer. They can be
+extracted one by one. In this way absent modules cause no extra delay,
+When we find the first module we transmit a second ID request for it.
+The response to this request means that we have reached the end of the reply.
+In this way we avoid ever timing out except when we have 0 modules.
+Copied to release files.
+
+
+27/10/03  Problem found with ID code search. If you put in module 10 or
+more you could get phantom module 0s. Corrected and copied to release.
+Version 6.01
+
+
+19/03/04
+		Problem with noise when doing the ID code read. At times during this the
+receive line is o/c so we can get noise and errors. Changed the code to ignore serial errors.
+The error data though often contains 0x00 chars. Must replace them with deletes to 
+prevent strings being falsely terminated. Normal reads should not suffer from this since
+the previous unit should still be driving the line but it seems safer to convert them to
+this type anyway. It might be a problem if a broken device was not responding. The next read
+could then give errors. Copied to release Version 6.02
+
+25/03/04
+		Above did not fully solve the problem. When there are many non repsonding devices it
+is possible to get many rubbish bytes with no valid data. The routine returned any error if
+its 80 byte buffer overflowed. Solution is to look for a valid "xx: " start sequence as the
+data arrives and throw away any non suitable rubbish. This was tested with a customers 
+cable that gave this error. Release as 6.03.
+
+2/04/04	
+		Problem opening COM ports above 9. Seems the name has to \\\\.\\COMn. This is 
+naturally not documented by Microsoft. Release as 6.04.
+
+8/7/04  
+		Added a delay in the sending out of the repeat of the first module found in the 
+		ID list routine. This to accomodate radio modems where different units may reply
+		in odd sequences. 
+

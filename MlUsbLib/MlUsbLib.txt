@@ -1,0 +1,28 @@
+			History
+
+18/2/03		Annotated and compiled. Had problems with release version.
+Needed to set link options to default not maximise speed, otherwise it
+crashed the computer with the 75X busy light on.
+		Project moved to D:. Version on C: deleted.
+
+4/4/03      Searched for C: references. Changed mlusblib.h to remove
+a reference to imlinter on c:. Recompiled.
+		Placed lib and .h file in the compile libs directory.
+		Placed release version in V6.00 release files DLLs
+		
+5/4/03	Added Version Block. Copied to release
+
+11/12/03 Problems with streaming caused changes here. We now send stream data
+across USB as Header (2 bytes) + copy data + new data. This allows us to miss
+a single packet and still recover. We now tell the mlusb driver how many bytes
+to expect in the packet. We have a minimum packet of 128 and increase to 512 as
+required. We then inform the USB unit of the number of samples of new data that
+it can send in a packet. This is adjusted so that the packet never overflows.
+The number of bytes in a usb packet has to be kept to a multiple of 2 or some
+computers won't work.
+
+13/3/05	Modified code to allow retries when errors occur. Try twice at the moment.
+
+10/8/10 Version 6.03 
+				Added code to stop hardware streaming before closing Driver streaming.
+This in response to recent Dells blue screening.
