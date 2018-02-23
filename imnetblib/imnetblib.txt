@@ -1,0 +1,6 @@
+		History
+
+5/4/03		Added Version Block 6.00
+			Changed Version string to 6.00
+			Removed fars
+			Resource imnetblib.rc added to project.

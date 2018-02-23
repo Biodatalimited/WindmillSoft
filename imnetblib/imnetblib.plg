@@ -1,0 +1,33 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: imnetblib - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\TEMP\RSP5E.tmp" with contents
+[
+/nologo /MT /W3 /GX /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /Fp"Release/imnetblib.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\Windmill 32\imnetblib\Imnbl32.c"
+]
+Creating command line "cl.exe @C:\TEMP\RSP5E.tmp" 
+Creating temporary file "C:\TEMP\RSP5F.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib netapi32.lib /nologo /subsystem:windows /dll /incremental:no /pdb:"Release/imnetblib.pdb" /machine:I386 /out:"Release/imnetblib.dll" /implib:"Release/imnetblib.lib" 
+".\Release\Imnbl32.obj"
+]
+Creating command line "link.exe @C:\TEMP\RSP5F.tmp"
+<h3>Output Window</h3>
+Compiling...
+Imnbl32.c
+Linking...
+   Creating library Release/imnetblib.lib and object Release/imnetblib.exp
+
+
+
+<h3>Results</h3>
+imnetblib.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
