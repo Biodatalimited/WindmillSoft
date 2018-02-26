@@ -1,0 +1,16 @@
+		History
+
+4/4/03		Added code to change working directory to iml default.
+	did this rather than override the file open dialog which seemed
+	hard work. Used _chdir.
+	Added new version block which it claimed was a duplicate resource
+	Seems there was a .rc2 file in the resource dir which only contained
+	a version block. Commented it out and renamed the file .rcx. Seems
+	happy using new resouce block
+	Changed about box to 6.00.
+	Put new version in release files.
+
+
+2/2/11	Version 7.00 Changed for new release
+
+29/9/11  Version 7.01  Added new help arrangements

@@ -1,0 +1,668 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.rc""  // Standard components\r\n"
+    "#include ""afxprint.rc""  // printing/print preview resources\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "RES\\REPLAY.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "RES\\TOOLBAR.BMP"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "Zoom Out &X-Axis",            ID_ZOOM_OUT_X
+        MENUITEM "Zoom Out &Y-Axis",            ID_ZOOM_OUT_Y
+        MENUITEM "Zoom Out &Both",              ID_ZOOM_OUT_BOTH
+        MENUITEM SEPARATOR
+        MENUITEM "View &All of Graph",          ID_ZOOM_OUT
+    END
+    MENUITEM "&Channels",                   ID_CHANNELS
+    POPUP "&Replay"
+    BEGIN
+        MENUITEM "Go to Start",                 ID_REPLAY_GOTOSTART
+        MENUITEM "Go to End",                   ID_REPLAY_GOTOEND
+        MENUITEM SEPARATOR
+        MENUITEM "Forward",                     ID_REPLAY_FORWARD
+        MENUITEM "Reverse",                     ID_REPLAY_REVERSE
+        MENUITEM "Fast Forward",                ID_REPLAY_FASTFORWARD
+        MENUITEM "Fast Reverse",                ID_REPLAY_FASTREVERSE
+        MENUITEM SEPARATOR
+        MENUITEM "Stop",                        ID_REPLAY_STOP
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About REPLAY...",            ID_APP_ABOUT
+        MENUITEM "Help &Index",                 ID_HELP_INDEX
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  34, 22, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About REPLAY"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Version  7.00",IDC_VERSION,40,10,119,8
+    LTEXT           "Copyright © Dataq Ltd 1996 - 2003",IDC_COPYRIGHT,40,24,
+                    119,8
+    DEFPUSHBUTTON   "OK",IDOK,176,6,32,14,WS_GROUP
+END
+
+IDD_CHANDIALOG DIALOG DISCARDABLE  100, 50, 257, 208
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Channels"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,136,190,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,201,190,50,14
+    COMBOBOX        IDC_CHAN1,10,24,80,71,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CHAN2,10,44,80,71,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CHAN3,10,64,80,71,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CHAN4,10,84,80,71,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CHAN5,10,104,80,71,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CHAN6,10,124,80,71,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CHAN7,10,144,80,71,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CHAN8,10,164,80,71,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COLOUR1,105,25,48,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COLOUR2,105,45,48,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COLOUR3,105,65,48,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COLOUR4,105,85,48,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COLOUR5,105,105,48,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COLOUR6,105,125,48,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COLOUR7,105,145,48,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COLOUR8,105,165,48,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_DECPL1,170,25,75,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_DECPL2,170,45,75,60,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_DECPL3,170,65,75,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_DECPL4,170,85,75,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_DECPL5,170,105,75,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_DECPL6,170,125,75,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_DECPL7,170,145,75,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_DECPL8,170,165,75,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CTEXT           "Channel",IDC_CHANNAME,10,10,65,10
+    CTEXT           "Line Colour",IDC_COLOUR,105,5,35,15
+    CTEXT           "Channel Type and Resolution",IDC_PLACES,170,5,65,15
+    PUSHBUTTON      "&Clear All",IDC_CLEAR_ALL,6,190,50,14
+    PUSHBUTTON      "&Defaults",IDC_DEFAULTS,71,190,50,14
+END
+
+IDD_READDIALOG DIALOG DISCARDABLE  100, 100, 185, 92
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Windmill Replay"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,65,65,50,14
+    CTEXT           "Reading data for channel",IDC_READING,1,15,183,11
+    EDITTEXT        IDC_READCHAN,61,31,61,14,ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_COLOUR_DIALOG DIALOG DISCARDABLE  150, 50, 115, 146
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Line Colour"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,73,44,33,14
+    PUSHBUTTON      "Cancel",IDCANCEL,73,88,33,14
+    GROUPBOX        "Line Colour",IDC_LINE_COLOUR,11,15,50,119
+    CONTROL         "Red",IDC_COLOUR_RED,"Button",BS_AUTORADIOBUTTON,15,33,
+                    41,8
+    CONTROL         "Green",IDC_COLOUR_GREEN,"Button",BS_AUTORADIOBUTTON,15,
+                    49,41,8
+    CONTROL         "Blue",IDC_COLOUR_BLUE,"Button",BS_AUTORADIOBUTTON,15,65,
+                    41,8
+    CONTROL         "Cyan",IDC_COLOUR_CYAN,"Button",BS_AUTORADIOBUTTON,15,81,
+                    41,8
+    CONTROL         "Magenta",IDC_COLOUR_MAGENTA,"Button",BS_AUTORADIOBUTTON,
+                    15,97,41,8
+    CONTROL         "Yellow",IDC_COLOUR_YELLOW,"Button",BS_AUTORADIOBUTTON,
+                    15,113,41,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CHANDIALOG DLGINIT
+BEGIN
+    IDC_COLOUR1, 0x403, 4, 0
+0x6552, 0x0064, 
+    IDC_COLOUR1, 0x403, 6, 0
+0x7247, 0x6565, 0x006e, 
+    IDC_COLOUR1, 0x403, 5, 0
+0x6c42, 0x6575, "\000" 
+    IDC_COLOUR1, 0x403, 5, 0
+0x7943, 0x6e61, "\000" 
+    IDC_COLOUR1, 0x403, 8, 0
+0x614d, 0x6567, 0x746e, 0x0061, 
+    IDC_COLOUR1, 0x403, 7, 0
+0x6559, 0x6c6c, 0x776f, "\000" 
+    IDC_COLOUR2, 0x403, 4, 0
+0x6552, 0x0064, 
+    IDC_COLOUR2, 0x403, 6, 0
+0x7247, 0x6565, 0x006e, 
+    IDC_COLOUR2, 0x403, 5, 0
+0x6c42, 0x6575, "\000" 
+    IDC_COLOUR2, 0x403, 5, 0
+0x7943, 0x6e61, "\000" 
+    IDC_COLOUR2, 0x403, 8, 0
+0x614d, 0x6567, 0x746e, 0x0061, 
+    IDC_COLOUR2, 0x403, 7, 0
+0x6559, 0x6c6c, 0x776f, "\000" 
+    IDC_COLOUR3, 0x403, 4, 0
+0x6552, 0x0064, 
+    IDC_COLOUR3, 0x403, 6, 0
+0x7247, 0x6565, 0x006e, 
+    IDC_COLOUR3, 0x403, 5, 0
+0x6c42, 0x6575, "\000" 
+    IDC_COLOUR3, 0x403, 5, 0
+0x7943, 0x6e61, "\000" 
+    IDC_COLOUR3, 0x403, 8, 0
+0x614d, 0x6567, 0x746e, 0x0061, 
+    IDC_COLOUR3, 0x403, 7, 0
+0x6559, 0x6c6c, 0x776f, "\000" 
+    IDC_COLOUR4, 0x403, 4, 0
+0x6552, 0x0064, 
+    IDC_COLOUR4, 0x403, 6, 0
+0x7247, 0x6565, 0x006e, 
+    IDC_COLOUR4, 0x403, 5, 0
+0x6c42, 0x6575, "\000" 
+    IDC_COLOUR4, 0x403, 5, 0
+0x7943, 0x6e61, "\000" 
+    IDC_COLOUR4, 0x403, 8, 0
+0x614d, 0x6567, 0x746e, 0x0061, 
+    IDC_COLOUR4, 0x403, 7, 0
+0x6559, 0x6c6c, 0x776f, "\000" 
+    IDC_COLOUR5, 0x403, 4, 0
+0x6552, 0x0064, 
+    IDC_COLOUR5, 0x403, 6, 0
+0x7247, 0x6565, 0x006e, 
+    IDC_COLOUR5, 0x403, 5, 0
+0x6c42, 0x6575, "\000" 
+    IDC_COLOUR5, 0x403, 5, 0
+0x7943, 0x6e61, "\000" 
+    IDC_COLOUR5, 0x403, 8, 0
+0x614d, 0x6567, 0x746e, 0x0061, 
+    IDC_COLOUR5, 0x403, 7, 0
+0x6559, 0x6c6c, 0x776f, "\000" 
+    IDC_COLOUR6, 0x403, 4, 0
+0x6552, 0x0064, 
+    IDC_COLOUR6, 0x403, 6, 0
+0x7247, 0x6565, 0x006e, 
+    IDC_COLOUR6, 0x403, 5, 0
+0x6c42, 0x6575, "\000" 
+    IDC_COLOUR6, 0x403, 5, 0
+0x7943, 0x6e61, "\000" 
+    IDC_COLOUR6, 0x403, 8, 0
+0x614d, 0x6567, 0x746e, 0x0061, 
+    IDC_COLOUR6, 0x403, 7, 0
+0x6559, 0x6c6c, 0x776f, "\000" 
+    IDC_COLOUR7, 0x403, 4, 0
+0x6552, 0x0064, 
+    IDC_COLOUR7, 0x403, 6, 0
+0x7247, 0x6565, 0x006e, 
+    IDC_COLOUR7, 0x403, 5, 0
+0x6c42, 0x6575, "\000" 
+    IDC_COLOUR7, 0x403, 5, 0
+0x7943, 0x6e61, "\000" 
+    IDC_COLOUR7, 0x403, 8, 0
+0x614d, 0x6567, 0x746e, 0x0061, 
+    IDC_COLOUR7, 0x403, 7, 0
+0x6559, 0x6c6c, 0x776f, "\000" 
+    IDC_COLOUR8, 0x403, 4, 0
+0x6552, 0x0064, 
+    IDC_COLOUR8, 0x403, 6, 0
+0x7247, 0x6565, 0x006e, 
+    IDC_COLOUR8, 0x403, 5, 0
+0x6c42, 0x6575, "\000" 
+    IDC_COLOUR8, 0x403, 5, 0
+0x7943, 0x6e61, "\000" 
+    IDC_COLOUR8, 0x403, 8, 0
+0x614d, 0x6567, 0x746e, 0x0061, 
+    IDC_COLOUR8, 0x403, 7, 0
+0x6559, 0x6c6c, 0x776f, "\000" 
+    IDC_DECPL1, 0x403, 8, 0
+0x6944, 0x6967, 0x6174, 0x006c, 
+    IDC_DECPL1, 0x403, 19, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x6f4e, 0x6420, 0x702e, 0x292e, 
+"\000" 
+    IDC_DECPL1, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2031, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL1, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2032, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL1, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2033, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL1, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2034, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL2, 0x403, 8, 0
+0x6944, 0x6967, 0x6174, 0x006c, 
+    IDC_DECPL2, 0x403, 19, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x6f4e, 0x6420, 0x702e, 0x292e, 
+"\000" 
+    IDC_DECPL2, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2031, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL2, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2032, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL2, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2033, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL2, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2034, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL3, 0x403, 8, 0
+0x6944, 0x6967, 0x6174, 0x006c, 
+    IDC_DECPL3, 0x403, 16, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x6f4e, 0x656e, 0x0029, 
+    IDC_DECPL3, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2031, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL3, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2032, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL3, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2033, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL3, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2034, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL4, 0x403, 8, 0
+0x6944, 0x6967, 0x6174, 0x006c, 
+    IDC_DECPL4, 0x403, 19, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x6f4e, 0x6420, 0x702e, 0x292e, 
+"\000" 
+    IDC_DECPL4, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2031, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL4, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2032, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL4, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2033, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL4, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2034, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL5, 0x403, 8, 0
+0x6944, 0x6967, 0x6174, 0x006c, 
+    IDC_DECPL5, 0x403, 19, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x6f4e, 0x6420, 0x702e, 0x292e, 
+"\000" 
+    IDC_DECPL5, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2031, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL5, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2032, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL5, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2033, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL5, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2034, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL6, 0x403, 8, 0
+0x6944, 0x6967, 0x6174, 0x006c, 
+    IDC_DECPL6, 0x403, 19, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x6f4e, 0x6420, 0x702e, 0x292e, 
+"\000" 
+    IDC_DECPL6, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2031, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL6, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2032, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL6, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2033, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL6, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2034, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL7, 0x403, 8, 0
+0x6944, 0x6967, 0x6174, 0x006c, 
+    IDC_DECPL7, 0x403, 19, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x6f4e, 0x6420, 0x702e, 0x292e, 
+"\000" 
+    IDC_DECPL7, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2031, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL7, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2032, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL7, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2033, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL7, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2034, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL8, 0x403, 8, 0
+0x6944, 0x6967, 0x6174, 0x006c, 
+    IDC_DECPL8, 0x403, 19, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x6f4e, 0x6420, 0x702e, 0x292e, 
+"\000" 
+    IDC_DECPL8, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2031, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL8, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2032, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL8, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2033, 0x2e64, 0x2e70, 0x0029, 
+
+    IDC_DECPL8, 0x403, 18, 0
+0x6e41, 0x6c61, 0x676f, 0x6575, 0x2820, 0x2034, 0x2e64, 0x2e70, 0x0029, 
+
+    0
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 7,0,1,0
+ PRODUCTVERSION 7,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Windmill Software\0"
+            VALUE "FileDescription", "Replay\0"
+            VALUE "FileVersion", "7.01\0"
+            VALUE "InternalName", "Replay\0"
+            VALUE "LegalCopyright", "Copyright © 2011\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Replay.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Windmill Replay\0"
+            VALUE "ProductVersion", "7.00\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x809, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Windmill Replay\nREPLAY\nLogger File\nLogger Files (*.wl)\n.wl"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Windmill Replay"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document"
+    ID_FILE_OPEN            "Open an existing document"
+    ID_FILE_CLOSE           "Close the active document"
+    ID_FILE_SAVE            "Save the active document"
+    ID_FILE_SAVE_AS         "Save the active document with a new name"
+    ID_FILE_PAGE_SETUP      "Change the printing options"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options"
+    ID_FILE_PRINT           "Print the active document"
+    ID_FILE_PRINT_PREVIEW   "Display full pages"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright"
+    ID_APP_EXIT             "Quit the application; prompts to save documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane"
+    ID_PREV_PANE            "Switch back to the previous window pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection"
+    ID_EDIT_CLEAR_ALL       "Erase everything"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard"
+    ID_EDIT_FIND            "Find the specified text"
+    ID_EDIT_PASTE           "Insert Clipboard contents"
+    ID_EDIT_REPEAT          "Repeat the last action"
+    ID_EDIT_REPLACE         "Replace specific text with different text"
+    ID_EDIT_SELECT_ALL      "Select the entire document"
+    ID_EDIT_UNDO            "Undo the last action"
+    ID_EDIT_REDO            "Redo the previously undone action"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ZOOM_OUT             "Zoom out to show whole of graph"
+    ID_ZOOM_OUT_X           "Zoom out in X direction"
+    ID_ZOOM_OUT_Y           "Zoom out in Y direction"
+    ID_ZOOM_OUT_BOTH        "Zoom out in both X and Y directions"
+    ID_REPLAY_GOTOSTART     "Go to Start of File"
+    ID_REPLAY_GOTOEND       "Go to End of File"
+    ID_REPLAY_FORWARD       "Replay in forward direction"
+    ID_REPLAY_REVERSE       "Replay in reverse direction"
+    ID_REPLAY_FASTFORWARD   "Replay fast forward"
+    ID_REPLAY_FASTREVERSE   "Replay fast reverse"
+    ID_REPLAY_STOP          "Stop replay"
+    ID_CHANNELS             "Select channels for display"
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "afxres.rc"  // Standard components
+#include "afxprint.rc"  // printing/print preview resources
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

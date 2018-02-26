@@ -1,0 +1,49 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Replay - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x809 /fo"Release/Replay.res" /d "NDEBUG" "C:\Windmill 32\Replay\Replay.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1.BIO\LOCALS~1\Temp\RSP20.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /Fp"Release/Replay.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Windmill 32\Replay\Replay.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1.BIO\LOCALS~1\Temp\RSP20.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1.BIO\LOCALS~1\Temp\RSP21.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/Replay.pdb" /machine:I386 /out:"Release/Replay.exe" 
+".\Release\Chandlg.obj"
+".\Release\Channel.obj"
+".\Release\demo.obj"
+".\Release\Playdoc.obj"
+".\Release\Playfrm.obj"
+".\Release\Playview.obj"
+".\Release\Readdlg.obj"
+".\Release\Replay.obj"
+".\Release\Round.obj"
+".\Release\Stdafx.obj"
+".\Release\Textview.obj"
+".\Release\Yaxis.obj"
+".\Release\Replay.res"
+"..\Compile Libs\Imslib.lib"
+"..\Compile Libs\Commslib.lib"
+"..\..\Program Files\Microsoft Visual Studio\VC98\Lib\htmlhelp.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1.BIO\LOCALS~1\Temp\RSP21.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+Replay.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+Replay.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
